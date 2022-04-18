@@ -21,7 +21,7 @@ export class Main {
       console.log(window.location.hash.slice(1))
     })
 
-    div.innerHTML = `<a href='#aa'>aa</a>`
+    div.innerHTML = `<a href='#main'>main</a>`
 
     return div
   }
