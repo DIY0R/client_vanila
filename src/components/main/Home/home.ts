@@ -4,7 +4,7 @@ export class HomePage implements componentTask {
   constructor() {}
   toHTML() {
     return `<h1>
-    hello HomePage
+    Hello Home Page
     </h1>`
   }
 }
