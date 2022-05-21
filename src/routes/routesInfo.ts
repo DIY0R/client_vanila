@@ -1,20 +1,20 @@
 import { AboutPage } from '../components/main/About/about'
 import { HomePage } from '../components/main/Home/home'
 export interface componentTask {
-  toHTML: () => string
+  toHTML: () => HTMLElement
 }
-export interface routerInterface<T> {
+export interface routerInterface<T = componentTask> {
   url: string
   component: T
 }
 
 export const routesInfo: Array<routerInterface<componentTask>> = [
   {
-    url: '/home',
+    url: 'home',
     component: new HomePage(),
   },
   {
-    url: '/about',
+    url: 'about',
     component: new AboutPage(),
   },
 ]

@@ -1,8 +1,5 @@
 export class App {
-  private componets: Array<any>
-  constructor(private classElement: string, componets: Array<any>) {
-    this.componets = componets
-  }
+  constructor(private classElement: string, private componets: Array<any>) {}
 
   render() {
     const div = document.querySelector(this.classElement)

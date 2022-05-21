@@ -8,7 +8,7 @@ import { Route } from './routes/Route'
 import { routesInfo } from './routes/routesInfo'
 
 const app = new App('.app', [
-  new Header(Route, routesInfo),
+  new Header(new Route(), routesInfo),
   new Main(new RegisterListeners(routesInfo)),
   new Footer(),
 ])
