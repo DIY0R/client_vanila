@@ -1,0 +1,16 @@
+
+
+name: CI-client-vanila
+
+on:
+  push:
+    branches: [ main ]
+
+
+jobs:
+  tasks:
+    runs-on: ubuntu-latest
+   
+    steps: 
+      - name: push to main
+        run : echo " push to github 🟡🟡🟡🟡" 

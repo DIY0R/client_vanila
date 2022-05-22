@@ -1,12 +1,9 @@
 import { Route } from '../../routes/Route'
 import { routerInterface } from '../../routes/routesInfo'
+import { componentTask } from '../../types/componentTask'
 
-export class Header {
-  constructor(
-    private generateRoute: typeof Route,
-    private Routes: Array<routerInterface<object>>
-  ) {}
-
+export class Header implements componentTask {
+  constructor(private route: Route, private Routes: Array<routerInterface>) {}
   toHTML() {
     const el = document.createElement('nav')
     el.classList.add('navbar', 'navbar-expand-lg', 'navbar-light', 'bg-light')
@@ -26,11 +23,7 @@ export class Header {
     </div>
   </div>`
 
-    this.Routes.forEach((urlInfo) => {
-      el.querySelector('.navbar-nav').append(
-        this.generateRoute.generate(urlInfo.url)
-      )
-    })
+    this.route.addHeaderLinks(el.querySelector('.navbar-nav'), this.Routes)
     return el
   }
 }
