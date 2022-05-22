@@ -1,7 +1,8 @@
 import { Route } from '../../routes/Route'
-import { componentTask, routerInterface } from '../../routes/routesInfo'
+import { routerInterface } from '../../routes/routesInfo'
+import { componentTask } from '../../types/componentTask'
 
-export class Header {
+export class Header implements componentTask {
   constructor(private route: Route, private Routes: Array<routerInterface>) {}
   toHTML() {
     const el = document.createElement('nav')

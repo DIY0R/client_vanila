@@ -1,4 +1,4 @@
-import { componentTask } from '../../../routes/routesInfo'
+import { componentTask } from '../../../types/componentTask'
 
 export class HomePage implements componentTask {
   constructor() {}

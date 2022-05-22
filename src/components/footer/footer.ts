@@ -1,4 +1,6 @@
-export class Footer {
+import { componentTask } from '../../types/componentTask'
+
+export class Footer implements componentTask {
   constructor() {}
   toHTML() {
     const el = document.createElement('div')
