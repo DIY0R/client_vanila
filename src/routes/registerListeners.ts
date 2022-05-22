@@ -1,4 +1,5 @@
-import { componentTask, routerInterface, routesInfo } from './routesInfo'
+import { componentTask } from '../types/componentTask'
+import { routerInterface, routesInfo } from './routesInfo'
 
 export class RegisterListeners {
   constructor(private routes: typeof routesInfo) {}
