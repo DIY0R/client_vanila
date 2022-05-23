@@ -1,9 +1,7 @@
 import { AboutPage } from '../components/main/About/about'
 import { HomePage } from '../components/main/Home/home'
 import { componentTask } from '../types/componentTask'
-// export interface componentTask {
-//   toHTML: () => HTMLElement
-// }
+
 export interface routerInterface<T = componentTask> {
   url: string
   component: T
