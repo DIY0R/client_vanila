@@ -1,3 +1,3 @@
 export interface componentTask {
-  toHTML: () => HTMLElement
+  toHTML(): HTMLElement
 }

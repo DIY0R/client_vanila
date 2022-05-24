@@ -1,15 +1,16 @@
 import { AboutPage } from '../components/main/About/about'
 import { HomePage } from '../components/main/Home/home'
-import { componentTask } from '../types/componentTask'
-// export interface componentTask {
-//   toHTML: () => HTMLElement
-// }
-export interface routerInterface<T = componentTask> {
+import { LoginPage } from '../components/main/Registration/login/Login'
+
+import { pageTask } from '../types/pageTask'
+
+export interface routerInterface<T = pageTask> {
   url: string
   component: T
+  notMain?: boolean
 }
 
-export const routesInfo: Array<routerInterface<componentTask>> = [
+export const routesInfo: Array<routerInterface<pageTask>> = [
   {
     url: 'home',
     component: new HomePage(),
@@ -17,5 +18,10 @@ export const routesInfo: Array<routerInterface<componentTask>> = [
   {
     url: 'about',
     component: new AboutPage(),
+  },
+  {
+    url: 'login',
+    component: new LoginPage(),
+    notMain: true,
   },
 ]

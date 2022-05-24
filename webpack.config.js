@@ -1,7 +1,7 @@
 const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
-
+const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const isProd = process.env.NODE_ENV === 'production'
@@ -29,10 +29,11 @@ const jsLoaders = () => {
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: 'development',
-  entry: './index.ts',
+  entry: { path: './index.ts' },
   output: {
     filename: filename('js'),
     path: path.resolve(__dirname, 'dist'),
+    // publicPath: './src/style',
   },
   resolve: {
     extensions: ['.ts', '.js'],
@@ -53,6 +54,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HTMLWebpackPlugin({
       template: 'index.html',
+
       minify: {
         removeComments: isProd,
         collapseWhitespace: isProd,
@@ -79,7 +81,10 @@ module.exports = {
           'sass-loader',
         ],
       },
-
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
       {
         test: /\.ts?$/,
         use: 'ts-loader',

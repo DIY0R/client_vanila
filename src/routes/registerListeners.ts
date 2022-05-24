@@ -1,16 +1,21 @@
 import { componentTask } from '../types/componentTask'
+import { pageTask } from '../types/pageTask'
 import { routerInterface, routesInfo } from './routesInfo'
 
 export class RegisterListeners {
   constructor(private routes: typeof routesInfo) {}
 
-  registerEventsRoutes(div: HTMLElement) {
+  registerEventsRoutes(div: HTMLElement, document: Document) {
+    const style = document.getElementById('style') as any
     window.addEventListener('hashchange', (e) => {
       div.innerHTML = ''
-      let route: routerInterface<componentTask> = this.routes.find(
+
+      let route: routerInterface<pageTask> = this.routes.find(
         (route) => '/' + route.url == window.location.hash.slice(1)
       )
-      div.append(route.component.toHTML())
+      const componentPage = route.component
+
+      div.append(componentPage.toHTML())
     })
     window.addEventListener('load', function (e) {
       console.log(window.location.hash.slice(1))

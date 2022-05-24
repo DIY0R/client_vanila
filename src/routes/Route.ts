@@ -13,7 +13,7 @@ export class Route {
   }
   addHeaderLinks(el: HTMLElement, routes: Array<routerInterface>) {
     routes.forEach((urlInfo) => {
-      el.append(this.generate(urlInfo.url))
+      !urlInfo.notMain && el.append(this.generate(urlInfo.url))
     })
   }
 }
