@@ -21,6 +21,9 @@ export class Header implements componentTask {
       <div class="navbar-nav">
         </div>
     </div>
+    <div class="d-flex">
+     <a href="#/login">login</a>
+    </div>
   </div>`
 
     this.route.addHeaderLinks(el.querySelector('.navbar-nav'), this.Routes)

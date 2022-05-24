@@ -4,7 +4,8 @@ export class Main {
 
   toHTML() {
     const div = document.createElement('div')
-    this.listener.registerEventsRoutes(div)
+
+    this.listener.registerEventsRoutes(div, document)
     div.innerHTML = `<a href='#main'>main</a>`
     return div
   }

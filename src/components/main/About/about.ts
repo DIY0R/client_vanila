@@ -1,6 +1,6 @@
-import { componentTask } from '../../../types/componentTask'
+import { pageTask } from '../../../types/pageTask'
 
-export class AboutPage implements componentTask {
+export class AboutPage implements pageTask {
   constructor() {}
   toHTML() {
     const div = document.createElement('div')
