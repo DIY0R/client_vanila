@@ -24,4 +24,4 @@ tasks:
 
   steps:
     - name: push to main
-      run: echo " push to github 🟡🟡🟡🟡"
+      run: echo " push to github 🟡🟡🟡🟡 "
