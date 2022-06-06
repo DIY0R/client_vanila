@@ -7,7 +7,7 @@ import { RegisterListeners } from './routes/registerListeners'
 import { Route } from './routes/Route'
 import { routesInfo } from './routes/routesInfo'
 
-const app = new App('.app', [
+export const app = new App('.app', [
   new Header(new Route(), routesInfo),
   new Main(new RegisterListeners(routesInfo)),
   new Footer(),
