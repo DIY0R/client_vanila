@@ -1,4 +1,4 @@
-name: Node.js CI
+name: client-vanila CI
 
 on:
   push:
@@ -12,17 +12,17 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [8.x, 10.x, 17.x]
+        node-version: [17.x]
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install, build, test
         run: |
-          npm install
+          npm install --legacy-peer-deps
           npm run build
           npm run test
         env:
