@@ -5,18 +5,19 @@ on:
   pull_request:
     branches: [main]
 jobs:
-  init:
+  build-and-test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        n-v: [17.x]
+        node-version: [16.x]
     steps:
       - uses: actions/checkout@v3
-      - name: Staring Node.js ${{ matrix.n-v }}
+      - name: Use Node.js ${{ matrix.node-versio }}
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.n-v }}
-      - name: i s
+          node-version: ${{ matrix.node-versio }}
+          cache: 'npm'
+      - name: i-s
         run: npm install
       - name: build project
         run: npm run build
