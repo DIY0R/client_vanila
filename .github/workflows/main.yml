@@ -23,7 +23,6 @@ jobs:
       - name: Install, build, test
         run: |
           npm install --legacy-peer-deps
-          npm run build
           npm run test
         env:
           CI: true
