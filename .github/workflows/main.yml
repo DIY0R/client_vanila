@@ -1,16 +1,27 @@
-
-
 name: CI-client-vanila
 
 on:
   push:
-    branches: [ main ]
-
-
+    branches: [main]
 jobs:
-  tasks:
+  node-install:
     runs-on: ubuntu-latest
-   
-    steps: 
-      - name: push to main
-        run : echo " push to github 🟡🟡🟡🟡" 
+    startegy:
+      matrix:
+        n-v: [17.x]
+    steps:
+      - user: actions/checkout@v3
+      - name: install node ${{matrix.n-v}}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{matrix.n-v}}
+      - name: i-m
+        run: npm install
+      - name: jest-test
+        run: npm run test
+tasks:
+  runs-on: ubuntu-latest
+
+  steps:
+    - name: push to main
+      run: echo " push to github 🟡🟡🟡🟡 "
