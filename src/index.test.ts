@@ -1,5 +1,6 @@
 // import { app } from './index'
 
 test('str index test', () => {
-  expect(3).toBe(3)
+  let obj = { a: 4 }
+  expect(obj).toBe(obj)
 })
