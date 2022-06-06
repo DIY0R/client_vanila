@@ -19,9 +19,9 @@ jobs:
         run: npm install
       - name: jest-test
         run: npm run test
-tasks:
-  runs-on: ubuntu-latest
+  tasks:
+    runs-on: ubuntu-latest
 
-  steps:
-    - name: push to main
-      run: echo " push to github 🟡🟡🟡🟡 "
+    steps:
+      - name: push to main
+        run: echo " push to github 🟡🟡🟡🟡 "
