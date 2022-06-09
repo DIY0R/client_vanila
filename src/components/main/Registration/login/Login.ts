@@ -1,6 +1,12 @@
+import { authUse } from '../../../../bll/auth/useAdapter'
 import { pageTask } from '../../../../types/pageTask'
 import '../style/login.css'
+import { LoginActions } from './loginActions'
 export class LoginPage implements pageTask {
+  loginActions: LoginActions
+  constructor() {
+    this.loginActions = new LoginActions(authUse)
+  }
   public style: string = 'login.css'
   toHTML(): HTMLElement {
     const div = document.createElement('div')
@@ -19,7 +25,7 @@ export class LoginPage implements pageTask {
     <form>
       <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
       <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-      <input type="submit" class="fadeIn fourth" value="Log In">
+      <input type="submit" class="fadeIn fourth btn-login" value="Log In">
     </form>
 
     <!-- Remind Passowrd -->
@@ -31,6 +37,8 @@ export class LoginPage implements pageTask {
 </div>
       </div>
     `
+    this.loginActions.login(div, '.btn-login')
+
     return div
   }
 }
