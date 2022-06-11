@@ -6,6 +6,7 @@ import { LoginPage } from '../components/main/Registration/login/Login'
 import { pageTask } from '../types/pageTask'
 
 import { componentTask } from '../types/componentTask'
+import { AuthUseAdapter } from '../bll/auth/useAdapter'
 
 export interface routerInterface<T = componentTask> {
   url: string
@@ -24,7 +25,7 @@ export const routesInfo: Array<routerInterface<pageTask>> = [
   },
   {
     url: 'login',
-    component: new LoginPage(),
+    component: new LoginPage(AuthUseAdapter),
     notMain: true,
   },
 ]

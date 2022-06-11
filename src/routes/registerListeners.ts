@@ -6,7 +6,7 @@ export class RegisterListeners {
   constructor(private routes: typeof routesInfo) {}
 
   registerEventsRoutes(div: HTMLElement, document: Document) {
-    const style = document.getElementById('style') as any
+    const style = document.getElementById('style')
     window.addEventListener('hashchange', (e) => {
       div.innerHTML = ''
 
@@ -18,7 +18,7 @@ export class RegisterListeners {
       div.append(componentPage.toHTML())
     })
     window.addEventListener('load', function (e) {
-      console.log(window.location.hash.slice(1))
+      window.location.hash = ''
     })
   }
 }
