@@ -49,7 +49,7 @@ module.exports = {
   devtool: isDev ? 'source-map' : false,
 
   devServer: {
-    port: 80,
+    port: process.env.PORT || 80,
     host: '0.0.0.0',
     hot: isDev,
   },
