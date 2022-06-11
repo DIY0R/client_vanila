@@ -18,6 +18,7 @@ export class Authorization {
     email: string
   ): Promise<returnLoginInterface> {
     const user = await this.checkUser(email)
+    this.isAuth = false
     if (user) {
       this.isAuth = true
       return { isAuth: this.getIsAuth, messages: [] }

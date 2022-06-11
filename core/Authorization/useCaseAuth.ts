@@ -8,7 +8,7 @@ export class useCaseAuth {
     const data = await this.auth.login(name, email)
     return data
   }
-  get getIsAuth() {
+  get getIsAuth(): boolean {
     return this.auth.getIsAuth
   }
 }

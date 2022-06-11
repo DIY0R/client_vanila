@@ -1,11 +1,13 @@
-import { authUse } from '../../../../bll/auth/useAdapter'
+import { useCaseAuth } from '../../../../../core/Authorization/useCaseAuth'
+import { AuthUseAdapterInterface } from '../../../../bll/auth/useAdapter'
 import { pageTask } from '../../../../types/pageTask'
 import '../style/login.css'
 import { LoginActions } from './loginActions'
+
 export class LoginPage implements pageTask {
   loginActions: LoginActions
-  constructor() {
-    this.loginActions = new LoginActions(authUse)
+  constructor(private authUseAdapter: AuthUseAdapterInterface) {
+    this.loginActions = new LoginActions(authUseAdapter)
   }
   public style: string = 'login.css'
   toHTML(): HTMLElement {
@@ -14,21 +16,21 @@ export class LoginPage implements pageTask {
     <div class="login container">
     <div class="wrapper fadeInDown">
   <div id="formContent">
-    <!-- Tabs Titles -->
-
-    <!-- Icon -->
+   
     <div class="fadeIn first">
-      <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
+      <img src="https://www.icmetl.org/wp-content/uploads/2020/11/user-icon-human-person-sign-vector-10206693.png" id="icon" alt="User Icon" />
     </div>
+   
+     
+    <div class="messages"></div>
 
-    <!-- Login Form -->
-    <form>
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+    <form class="form-login">
+      <input type="text" id="login" class="fadeIn login second" name="login" placeholder="login">
+      <input type="text"  id="password" class="fadeIn login third" name="password" placeholder="password">
       <input type="submit" class="fadeIn fourth btn-login" value="Log In">
     </form>
+     
 
-    <!-- Remind Passowrd -->
     <div id="formFooter">
       <a class="underlineHover" href="#">Forgot Password?</a>
     </div>
