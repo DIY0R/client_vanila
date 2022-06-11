@@ -5,12 +5,9 @@ import { LoginPage } from '../components/main/Registration/login/Login'
 
 import { pageTask } from '../types/pageTask'
 
-export interface routerInterface<T = pageTask> {
-
 import { componentTask } from '../types/componentTask'
 
 export interface routerInterface<T = componentTask> {
-
   url: string
   component: T
   notMain?: boolean
