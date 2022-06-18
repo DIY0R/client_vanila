@@ -28,9 +28,9 @@ jobs:
         env:
           CI: true
   test:
-    build:
+    needs: build
     runs-on: ubuntu-latest
-    environment: development
+    environment: test
     strategy:
       matrix:
         node-version: [16.x]
