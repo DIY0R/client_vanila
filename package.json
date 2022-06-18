@@ -1,17 +1,18 @@
 {
-  "name": "webpack-course-2020",
+  "name": "vanila-app",
   "version": "1.0.0",
   "engines": {
     "node": "16.x",
-    "npm":"v6.x"
+    "npm": "v6.x"
   },
-  "description": "webpack course",
+  "description": "vanila-app",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack --mode development",
     "build": "cross-env NODE_ENV=production webpack --mode production",
     "watch": "cross-env NODE_ENV=development webpack --mode development --watch",
     "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open",
+    "prod": "cross-env NODE_ENV=production webpack-dev-server ",
     "stats": "webpack --json > stats.json && webpack-bundle-analyzer stats.json",
     "test": "jest"
   },
