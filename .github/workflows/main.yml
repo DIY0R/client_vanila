@@ -7,12 +7,12 @@ on:
     branches: [main]
 
 jobs:
-  buildAndTest:
+  build:
     runs-on: ubuntu-latest
     environment: development
     strategy:
       matrix:
-        node-version: [17.x]
+        node-version: [16.x]
 
     steps:
       - uses: actions/checkout@v3
@@ -20,10 +20,28 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Install, test
+      - name: Install
         run: |
           npm install --legacy-peer-deps
-          npm run test
+
           npm run build
         env:
           CI: true
+  test:
+    build:
+    runs-on: ubuntu-latest
+    environment: development
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install
+        run: |
+          npm ci
+          npm run test
