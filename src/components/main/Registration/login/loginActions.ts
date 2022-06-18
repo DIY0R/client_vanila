@@ -18,10 +18,10 @@ export class LoginActions {
 
     btn.addEventListener('click', async (e) => {
       e.preventDefault()
-      console.log(formLogin.login.value)
+      const { password, login } = formLogin
       const user: returnLoginInterface = await this.auth.login(
-        formLogin.password.value,
-        formLogin.login.value
+        password.value,
+        login.value
       )
       this.validate(div, user.messages)
     })
