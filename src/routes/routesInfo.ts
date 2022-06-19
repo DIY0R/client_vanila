@@ -1,12 +1,12 @@
 import { AboutPage } from '../components/main/About/about'
 import { HomePage } from '../components/main/Home/home'
 
-import { LoginPage } from '../components/main/Registration/login/Login'
-
 import { pageTask } from '../types/pageTask'
 
 import { componentTask } from '../types/componentTask'
 import { AuthUseAdapter } from '../bll/auth/useAdapter'
+import { TYPESContainer } from '../types'
+import { vanilaContainer } from '../inversify.config'
 
 export interface routerInterface<T = componentTask> {
   url: string
@@ -25,7 +25,7 @@ export const routesInfo: Array<routerInterface<pageTask>> = [
   },
   {
     url: 'login',
-    component: new LoginPage(AuthUseAdapter),
+    component: vanilaContainer.get(TYPESContainer.loginPage),
     notMain: true,
   },
 ]

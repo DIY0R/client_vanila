@@ -1,8 +1,17 @@
+import { inject, injectable } from 'inversify'
 import { returnLoginInterface } from '../../../../../core/Authorization/types/returnLoginInterface'
-import { AuthUseAdapterInterface } from '../../../../bll/auth/useAdapter'
 
+import {
+  AuthUseAdapter,
+  AuthUseAdapterInterface,
+} from '../../../../bll/auth/useAdapter'
+import { TYPESContainer } from '../../../../types'
+
+@injectable()
 export class LoginActions {
-  constructor(private auth: AuthUseAdapterInterface) {}
+  constructor(
+    @inject(TYPESContainer.authBll) private auth: AuthUseAdapterInterface
+  ) {}
 
   private validate(div: HTMLElement, messages: Array<string>) {
     const messagesEl = div.querySelector('.messages')
