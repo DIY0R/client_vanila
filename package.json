@@ -25,7 +25,7 @@
   "author": "Vladilen <v@mail.ru>",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.18.2",
+    "@babel/core": "^7.18.5",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.8.3",
