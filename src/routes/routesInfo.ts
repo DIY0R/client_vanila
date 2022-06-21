@@ -1,12 +1,9 @@
 import { AboutPage } from '../components/main/About/about'
 import { HomePage } from '../components/main/Home/home'
-
 import { pageTask } from '../types/pageTask'
-
 import { componentTask } from '../types/componentTask'
-import { AuthUseAdapter } from '../bll/auth/useAdapter'
-import { TYPESContainer } from '../types'
 import { vanilaContainer } from '../inversify.config'
+import { TYPESContainer } from '../components/main/Registration/config/typeContainer'
 
 export interface routerInterface<T = componentTask> {
   url: string

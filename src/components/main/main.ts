@@ -1,4 +1,7 @@
 import { RegisterListeners } from '../../routes/registerListeners'
+import '../../bll/auth/config/auth.container'
+import '../main/Registration/config/auth.container'
+
 export class Main {
   constructor(private listener: RegisterListeners) {}
 
