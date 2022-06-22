@@ -1,8 +1,5 @@
-import { Container, interfaces } from 'inversify'
+import { Container } from 'inversify'
 import 'reflect-metadata'
-import { AuthUseAdapterInterface } from './bll/auth/config/typesContainer'
-import { AuthUseAdapter } from './bll/auth/useAdapter'
-import { TYPESContainer } from './types'
 
 const vanilaContainer = new Container()
 
