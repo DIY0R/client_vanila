@@ -1,15 +1,14 @@
 import { inject, injectable } from 'inversify'
-import { useCaseAuth } from '../../../../../core/Authorization/useCaseAuth'
-import { AuthUseAdapterInterface } from '../../../../bll/auth/useAdapter'
-import { TYPESContainer } from '../../../../types'
 
 import { pageTask } from '../../../../types/pageTask'
+import { TYPESContainer } from '../config/typeContainer'
 import '../style/login.css'
+import { LoginActions } from './loginActions'
 
 @injectable()
 export class LoginPage implements pageTask {
   constructor(
-    @inject(TYPESContainer.loginActions) private loginActions: any // private authUseAdapter: AuthUseAdapterInterface
+    @inject(TYPESContainer.loginActions) private loginActions: LoginActions // private authUseAdapter: AuthUseAdapterInterface
   ) {}
   public style: string = 'login.css'
   toHTML(): HTMLElement {

@@ -1,11 +1,11 @@
 import { inject, injectable } from 'inversify'
 import { returnLoginInterface } from '../../../../../core/Authorization/types/returnLoginInterface'
-
 import {
-  AuthUseAdapter,
   AuthUseAdapterInterface,
-} from '../../../../bll/auth/useAdapter'
-import { TYPESContainer } from '../../../../types'
+  TYPESContainer,
+} from '../../../../bll/auth/config/typesContainer'
+
+import { AuthUseAdapter } from '../../../../bll/auth/useAdapter'
 
 @injectable()
 export class LoginActions {
