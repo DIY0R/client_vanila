@@ -1,19 +1,19 @@
-import { routerInterface } from './routesInfo'
+import { routerInterface } from './routesInfo';
 
 export class Route {
   generate(nameRoute: string) {
-    const link = document.createElement('a')
-    link.classList.add('nav-link', nameRoute)
+    const link = document.createElement('a');
+    link.classList.add('nav-link', nameRoute);
 
-    link.setAttribute('aria-current', 'page')
-    link.href = '#/' + nameRoute
-    link.innerHTML = nameRoute
+    link.setAttribute('aria-current', 'page');
+    link.href = '#/' + nameRoute;
+    link.innerHTML = nameRoute;
 
-    return link
+    return link;
   }
   addHeaderLinks(el: HTMLElement, routes: Array<routerInterface>) {
     routes.forEach((urlInfo) => {
-      !urlInfo.notMain && el.append(this.generate(urlInfo.url))
-    })
+      !urlInfo.notMain && el.append(this.generate(urlInfo.url));
+    });
   }
 }

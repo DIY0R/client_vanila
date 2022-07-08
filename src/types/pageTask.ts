@@ -1,4 +1,4 @@
 export interface pageTask {
-  toHTML(): HTMLElement
-  style?: string
+  toHTML(): HTMLElement;
+  style?: string;
 }

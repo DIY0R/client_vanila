@@ -1,18 +1,18 @@
-import { inject, injectable } from 'inversify'
+import { inject, injectable } from 'inversify';
 
-import { pageTask } from '../../../../types/pageTask'
-import { TYPESContainer } from '../config/typeContainer'
-import '../style/login.css'
-import { LoginActions } from './loginActions'
+import { pageTask } from '../../../../types/pageTask';
+import { TYPESContainer } from '../config/typeContainer';
+import '../style/login.css';
+import { LoginActions } from './loginActions';
 
 @injectable()
 export class LoginPage implements pageTask {
   constructor(
     @inject(TYPESContainer.loginActions) private loginActions: LoginActions // private authUseAdapter: AuthUseAdapterInterface
   ) {}
-  public style: string = 'login.css'
+  public style: string = 'login.css';
   toHTML(): HTMLElement {
-    const div = document.createElement('div')
+    const div = document.createElement('div');
     div.innerHTML = `
     <div class="login container">
     <div class="wrapper fadeInDown">
@@ -39,9 +39,9 @@ export class LoginPage implements pageTask {
   </div>
 </div>
       </div>
-    `
-    this.loginActions.login(div, '.btn-login')
+    `;
+    this.loginActions.login(div, '.btn-login');
 
-    return div
+    return div;
   }
 }
