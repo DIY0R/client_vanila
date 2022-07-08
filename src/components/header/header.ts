@@ -1,12 +1,12 @@
-import { Route } from '../../routes/Route'
-import { routerInterface } from '../../routes/routesInfo'
-import { componentTask } from '../../types/componentTask'
+import { Route } from '../../routes/Route';
+import { routerInterface } from '../../routes/routesInfo';
+import { componentTask } from '../../types/componentTask';
 
 export class Header implements componentTask {
   constructor(private route: Route, private Routes: Array<routerInterface>) {}
   toHTML() {
-    const el = document.createElement('nav')
-    el.classList.add('navbar', 'navbar-expand-lg', 'navbar-light', 'bg-light')
+    const el = document.createElement('nav');
+    el.classList.add('navbar', 'navbar-expand-lg', 'navbar-light', 'bg-light');
     el.innerHTML = `<div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler"  type="button" 
@@ -24,9 +24,9 @@ export class Header implements componentTask {
     <div class="d-flex">
      <a href="#/login">login</a>
     </div>
-  </div>`
+  </div>`;
 
-    this.route.addHeaderLinks(el.querySelector('.navbar-nav'), this.Routes)
-    return el
+    this.route.addHeaderLinks(el.querySelector('.navbar-nav'), this.Routes);
+    return el;
   }
 }
