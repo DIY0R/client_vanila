@@ -1,6 +1,5 @@
 import { RegisterListeners } from '../../routes/registerListeners';
-import '../../bll/auth/config/auth.container';
-import '../main/Registration/config/auth.container';
+
 import { componentTask } from '../../types/componentTask';
 
 export class Main implements componentTask {
