@@ -3,7 +3,7 @@ import { HomePage } from '../components/main/Home/home';
 import { pageTask } from '../types/pageTask';
 import { componentTask } from '../types/componentTask';
 import { vanilaContainer } from '../inversify.config';
-import { TYPESContainer } from '../components/main/Registration/config/typeContainer';
+import { TYPESContainerRegister } from '../components/main/Registration/config/typeContainer';
 
 export interface routerInterface<T = componentTask> {
   url: string;
@@ -22,7 +22,7 @@ export const routesInfo: Array<routerInterface<pageTask>> = [
   },
   {
     url: 'login',
-    component: vanilaContainer.get(TYPESContainer.loginPage),
+    component: vanilaContainer.get(TYPESContainerRegister.loginPage),
     notMain: true,
   },
 ];

@@ -2,7 +2,7 @@ import { inject, injectable } from 'inversify';
 import { returnLoginInterface } from '../../../../../core/Authorization/types/returnLoginInterface';
 import {
   AuthUseAdapterInterface,
-  TYPESContainer,
+  TYPESContainerAuthBll,
 } from '../../../../bll/auth/config/typesContainer';
 
 import { AuthUseAdapter } from '../../../../bll/auth/useAdapter';
@@ -10,7 +10,7 @@ import { AuthUseAdapter } from '../../../../bll/auth/useAdapter';
 @injectable()
 export class LoginActions {
   constructor(
-    @inject(TYPESContainer.authBll) private auth: AuthUseAdapterInterface
+    @inject(TYPESContainerAuthBll.authBll) private auth: AuthUseAdapterInterface
   ) {}
 
   private validate(div: HTMLElement, messages: Array<string>) {

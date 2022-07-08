@@ -4,6 +4,6 @@ export interface AuthUseAdapterInterface {
   login(name: string, email: string): Promise<returnLoginInterface>;
   get getIsAuth(): boolean;
 }
-export const TYPESContainer = {
+export const TYPESContainerAuthBll = {
   authBll: Symbol.for('authBll'),
 };
