@@ -6,3 +6,5 @@ import { AuthorizationRealization } from './authorization';
 export const AuthUseAdapter = new useCaseAuth(
   new AuthorizationRealization(new Authorization())
 );
+
+console.log(AuthUseAdapter.getIsAuth);

@@ -20,6 +20,4 @@ vanilaContainer
   .bind<AuthUseAdapterInterface>(TYPESContainerAuthBll.authBll)
   .toDynamicValue(() => AuthUseAdapter);
 
-
-
 export { vanilaContainer };
